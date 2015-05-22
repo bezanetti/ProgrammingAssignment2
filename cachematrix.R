@@ -9,9 +9,9 @@ makeCacheMatrix <- function(x = matrix()) {
         inverse <- NULL ## Inverse matrix object; set to NULL when creating the special matrix object
         
         ## This function assigns the value of the matrix argument 'y' to 'x'
-        ## If the argument is equal to the matrix already stored in 'x', nothing is done
+        ## If the argument is equal to the matrix already stored in 'x', nothing is done, to save time
         set <- function(y) {
-                if (x != y) {
+                if (!identical(x,y)) {
                         x <<- y
                         inverse <<- NULL
                 }
